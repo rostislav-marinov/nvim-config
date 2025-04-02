@@ -25,19 +25,31 @@ return {
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
-
   {
     "nvim-treesitter/nvim-treesitter-refactor",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    keys = {
+      { "<leader>rv", "<cmd>TSVariableRename<cr>", desc = "Rename Variable" },
+      { "<leader>rf", "<cmd>TSFunctionRename<cr>", desc = "Rename Function" },
+      { "<leader>re", "<cmd>TSExtractVariable<cr>", desc = "Extract Variable" },
+      { "<leader>ri", "<cmd>TSInlineVariable<cr>", desc = "Inline Variable" },
+      -- Add more key mappings as needed based on the plugin's documentation
+    },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = { "HiPhish/nvim-ts-rainbow2" },
-    opts = function(_, opts)
-      opts.rainbow = {
-        enable = true,
-        query = "rainbow-parens",
-        strategy = require("ts-rainbow").strategy.global,
-      }
+    "HiPhish/nvim-ts-rainbow2",
+    enabled = false,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    event = "BufRead",
+    opts = {
+      enable = true,
+      -- colors = {}, -- Optionally specify custom colors
+      -- termcolors = {} -- Optionally specify custom terminal colors
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup({
+        rainbow = opts,
+      })
     end,
   },
 }

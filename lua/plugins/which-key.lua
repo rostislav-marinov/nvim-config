@@ -44,14 +44,15 @@ return { -- Useful plugin to show you pending keybinds.
     },
 
     spec = {
-      { "<leader>c", group = "[C]ode", mode = { "n", "x" } },
-      { "<leader>d", group = "[D]ocument" },
-      { "<leader>g", group = "[G]it" },
-      { "<leader>r", group = "[R]ename" },
-      { "<leader>s", group = "[S]earch" },
-      { "<leader>w", group = "[W]orkspace" },
-      { "<leader>t", group = "[T]oggle" },
-      { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+      { "<leader>c", group = "Code", mode = { "n", "x" } },
+      { "<leader>d", group = "Document" },
+      { "<leader>g", group = "Git" },
+      { "<leader>r", group = "Rename" },
+      { "<leader>s", group = "Search" },
+      { "<leader>w", group = "Workspace" },
+      { "<leader>t", group = "Toggle" },
+      { "<leader>x", group = "Diagnostics" },
+      { "<leader>h", group = "Git Hunk", mode = { "n", "v" } },
     },
   },
 }
