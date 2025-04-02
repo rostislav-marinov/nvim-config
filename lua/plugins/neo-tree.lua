@@ -1,6 +1,6 @@
+-- vim: ts=2 sts=2 sw=2 et
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -12,5 +12,8 @@ return {
   ---@type neotree.Config?
   opts = {
     -- fill any relevant options here
+  },
+  keys = {
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "LazyGit" },
   },
 }
