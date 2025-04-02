@@ -11,9 +11,13 @@ return {
   ---@module "neo-tree"
   ---@type neotree.Config?
   opts = {
-    -- fill any relevant options here
+    sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+    close_if_last_window = true,
+    popup_border_style = "rounded",
+    enable_git_status = true,
+    enable_diagnostics = true,
   },
   keys = {
-    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "LazyGit" },
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
   },
 }
