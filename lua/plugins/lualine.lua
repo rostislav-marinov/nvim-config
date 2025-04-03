@@ -22,6 +22,7 @@ local mode_map = {
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  enabled = false,
   opts = {
     {
       sections = {
