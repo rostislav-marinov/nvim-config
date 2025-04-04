@@ -1,7 +1,7 @@
 -- vim: ts=2 sts=2 sw=2 et
 return { -- Useful plugin to show you pending keybinds.
   "folke/which-key.nvim",
-  enabled = false,
+  enabled = true,
   event = "VimEnter", -- Sets the loading event to 'VimEnter'
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)
